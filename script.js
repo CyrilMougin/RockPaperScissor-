@@ -1,7 +1,4 @@
 
-
-
-
 function computerPlay() {
     const result = ["rock", "paper","scissor"];
     let choosenResultindex = result[Math.floor(Math.random() * result.length)];
@@ -66,3 +63,10 @@ function game(){
     }
 
 }
+
+const playerButtons = document.querySelectorAll(".btn");
+
+
+playerButtons.forEach(button => {button.addEventListener('click', clickEvent);
+});
+
