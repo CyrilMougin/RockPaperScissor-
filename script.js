@@ -1,3 +1,6 @@
+let MATCHDURATION = 0;
+
+isGameOver();
 
 function computerPlay() {
     const result = ["rock", "paper","scissor"];
@@ -22,51 +25,37 @@ function playRound(playerSelection, computerSelection){
     else {
         result = 1 ;
     }
-
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log(result);
     return result;
 }
 
-function game(){
 
-    let playerScore = 0;
-    let computerScore = 0;
-
-
-    for (let i = 0; i < 5; i++) {
-        
-        let playerSelection = prompt().toLowerCase();
-        let computerSelection = computerPlay();
-        let tmpScore = playRound(playerSelection, computerSelection);
-        console.log(tmpScore);
-
-        if ( tmpScore == 0) {
-            playerScore += 1;        
-        }
-
-        else if (tmpScore == 1){
-            computerScore +=1;
-        }
-        
-        console.log(playerSelection);
-        console.log(computerSelection);
-        console.log(playerScore);
-        console.log(computerScore);
-    
-    } 
-
-    if (playerScore > computerScore )
-    {
-        console.log(`Player wins ! ${playerScore} vs ${computerScore}`);
+function isGameOver() {
+    if (MATCHDURATION == 5) {
+        const playerButtons = document.querySelectorAll(".btn");
+        playerButtons.forEach(button => button.disabled = true);
+        playerButtons.forEach(button => button.style.opacity = 0.5);
     }
-    else {
-        console.log(`Computer wins ! ${computerScore} vs ${playerScore}`);
-    }
-
 }
 
+
+
+function clickEvent(e){
+    playRound(e.target.className, computerPlay());
+    
+
+}
 const playerButtons = document.querySelectorAll(".btn");
 
 
-playerButtons.forEach(button => {button.addEventListener('click', clickEvent);
-});
+playerButtons.forEach(button => button.addEventListener('click', clickEvent));
+    
+
+
+
+
+
+
 

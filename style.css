@@ -25,6 +25,18 @@ header{
 }
 
 
+
+.player-score {
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+    margin: 100px;
+    color: yellow;
+    font-size: 30px;
+}
+
+
+
 .player-button {
     display: flex;
     justify-content: center;
@@ -39,11 +51,7 @@ header{
   margin: 8px;
 }
 
-.btn-image{
+.rock,.paper, .scissor{
     height: 150px;
     width: 150px;
-}
-
-.btn-image-push{
-
 }
