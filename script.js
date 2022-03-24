@@ -11,45 +11,54 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection){
     
-    let result;
+    let playerScore = document.querySelector("#player-score");
+    let computerScore = document.querySelector("#computer-score");
+
     if ( playerSelection == computerSelection) 
     {
         result = 2;
+        console.log("draw");
     }
     else if (playerSelection == 'rock'    && computerSelection == "scissor"  ||
              playerSelection == 'scissor' && computerSelection == "paper"    ||
              playerSelection == 'paper'   && computerSelection == "rock") {
             
-            result = 0;
+            newScore = parseInt(playerScore.textContent) + 1 ;
+            playerScore.textContent = parseFloat(newScore);
         }
     else {
-        result = 1 ;
+        newScore = parseInt(computerScore.textContent) + 1 ;
+        computerScore.textContent = parseFloat(newScore);
     }
-    console.log(playerSelection);
-    console.log(computerSelection);
-    console.log(result);
-    return result;
+
+    MATCHDURATION +=1 ;
 }
 
 
+
 function isGameOver() {
+    
     if (MATCHDURATION == 5) {
         const playerButtons = document.querySelectorAll(".btn");
         playerButtons.forEach(button => button.disabled = true);
         playerButtons.forEach(button => button.style.opacity = 0.5);
+        return true;
     }
+    return false;
+
 }
 
 
 
 function clickEvent(e){
+
     playRound(e.target.className, computerPlay());
-    
-
+    if(isGameOver()) {
+        console.log("match is over");
+    }
 }
+
 const playerButtons = document.querySelectorAll(".btn");
-
-
 playerButtons.forEach(button => button.addEventListener('click', clickEvent));
     
 
