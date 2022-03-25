@@ -14,7 +14,6 @@ body{
     flex: 1;
 }
 
-
 header{
     display: flex;
     background-color: black;
@@ -24,8 +23,6 @@ header{
     padding : 16px 24px;
 }
 
-
-
 .player-score {
     display: flex;
     gap: 300px;
@@ -33,25 +30,67 @@ header{
     margin: 100px;
     color: yellow;
     font-size: 30px;
+    
 }
-
-
 
 .player-button {
     display: flex;
     justify-content: center;
     gap: 100px;
+    align-items: flex-start;
 }
-
-
 
 .btn {
   display: flex;
-  border: 4px solid black;
+  border: 10px solid black;
   margin: 8px;
+  transition: border 0.3s;
 }
 
-.rock,.paper, .scissor{
+
+.btn:hover {
+    cursor: pointer;
+    border: 10px solid orange;
+}
+
+.rock, .paper, .scissor{
     height: 150px;
     width: 150px;
 }
+
+.noHover{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    color: yellow;
+    font-size: 30px;
+}
+
+#round-result {
+    opacity: 0%;
+}
+
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.reset-button {
+    padding : 16px 32px;
+    background-color: yellow;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    border:none;
+}
+
