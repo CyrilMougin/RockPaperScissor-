@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+
+/* BODY */
+
 body{
     min-height: 100vh;
     display: flex;
@@ -14,6 +17,9 @@ body{
     flex: 1;
 }
 
+
+/* HEADER */
+ 
 header{
     display: flex;
     background-color: black;
@@ -22,6 +28,25 @@ header{
     align-items: center;
     padding : 16px 24px;
 }
+
+
+/* RESULT OF THE ROUND AND RESULT OF THE GAME */
+
+.round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    color: yellow;
+    font-size: 30px;
+}
+
+#round-result {
+    opacity: 0%;
+}
+
+
+/* ZONE THAT DISPLAY THE PLAYER SCORE */
 
 .player-score {
     display: flex;
@@ -39,6 +64,9 @@ header{
     gap: 100px;
     align-items: flex-start;
 }
+
+
+/* BUTTON THAT THE PLAYER MUST CLICK TO PLAY */
 
 .btn {
   display: flex;
@@ -63,19 +91,8 @@ header{
     opacity: 0.5;
 }
 
-.round {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 100px;
-    color: yellow;
-    font-size: 30px;
-}
 
-#round-result {
-    opacity: 0%;
-}
-
+/* RESET BUTTON */
 
 .reset {
     display: flex;
@@ -94,3 +111,8 @@ header{
     border:none;
 }
 
+.reset-button:hover {
+    color: orange;
+    border-color: orange;
+    border: 1px solid;
+}
